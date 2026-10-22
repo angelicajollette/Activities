@@ -1,0 +1,74 @@
+public class Main {
+
+    static class Student {
+        String name;
+        int[] quizzes;
+        double average;
+
+        Student(String name, int[] quizzes) {
+            this.name = name;
+            this.quizzes = quizzes;
+
+            int sum = 0;
+
+            for (int i = 0; i < quizzes.length; i++) {
+                sum = sum + quizzes[i];
+            }
+
+            average = (double) sum / quizzes.length;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Student[] students = {
+            new Student("Socrates", new int[]{90, 93, 76, 89}),
+            new Student("Confucius", new int[]{92, 94, 76, 87}),
+            new Student("Aristotle", new int[]{93, 92, 76, 88}),
+            new Student("Plato", new int[]{90, 91, 76, 89})
+        };
+
+        for (int i = 0; i < students.length - 1; i++) {
+            for (int j = 0; j < students.length - 1; j++) {
+
+                if (students[j].average < students[j + 1].average) {
+                    Student temp = students[j];
+                    students[j] = students[j + 1];
+                    students[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("LEADERBOARD NG MGA PHILOSOPHER MWEHEHE");
+        System.out.println("Rank\tName\tAverage");
+
+        int rank = 1;
+
+        for (int i = 0; i < students.length; i++) {
+
+            if (i > 0 &&
+                students[i].average != students[i - 1].average) {
+                rank = i + 1;
+            }
+
+            System.out.println(rank + "\t" + students[i].name + "\t" + students[i].average);
+        }
+
+
+        String searchName = "Confucius";
+        int index = -1;
+
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].name.equals(searchName)) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1) {
+            System.out.println(searchName + "'s rank: " + (index + 1));
+        } else {
+            System.out.println("DI YAN KASALI");
+        }
+    }
+}
