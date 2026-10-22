@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter username: ");
+        String username = input.nextLine();
+
+        if (username.equals("Angelica maganda")) {
+            System.out.print("Enter password: ");
+            String password = input.nextLine();
+
+            if (password.equals("magandaako123")) {
+                System.out.print("Scammer ka ba? (true/false): ");
+                boolean accountLocked = input.nextBoolean();
+                if (!accountLocked) {
+                    System.out.println("Sumakses ka e");
+                } else {
+                    System.out.println("MALIII! Account Locked");
+                }
+            } else {
+                System.out.println("Di sumakses kc incorrect password mue");
+            }
+        } else {
+            System.out.println("Di sumakses kc incorrect username mue");
+        }
+    }
+}
