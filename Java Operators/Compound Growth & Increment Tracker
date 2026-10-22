@@ -1,1 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
 
+        double balance =5000;
+
+        System.out.println("Initial Balance: " + balance);
+
+        balance += 500;
+        System.out.println("Add 200: " + balance);
+
+        balance *= 2;
+        System.out.println("Multiply by 2: " + balance);
+
+        balance += 1000;
+        System.out.println("add 500: " + balance);
+
+        int count = 5;
+
+        System.out.println("Postfix count++: " + count++);
+        System.out.println("Count after postfix: " + count);
+
+        System.out.println("Prefix ++count: " + (++count));
+        System.out.println("Count after prefix: " + count);
+    }
+}
