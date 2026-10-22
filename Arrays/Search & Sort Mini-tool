@@ -1,0 +1,32 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int[] scores = {15, 19, 20, 20, 17, 13, 14, 12};
+        int target = 20;
+        int index = -1;
+
+        for (int i = 0; i < scores.length; i++) {
+            if (scores[i] == target) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1) {
+            System.out.println(target + " was found at index " + index);
+        } else {
+            System.out.println(target + " was not found.");
+        }
+
+        int[] sortedScores = Arrays.copyOf(scores, scores.length);
+        Arrays.sort(sortedScores);
+
+        System.out.println("Original scores: " + Arrays.toString(scores));
+        System.out.println("Sorted scores: " + Arrays.toString(sortedScores));
+    }
+}
+
+sorry sir ginamit ko 67/76 kanina kaya naiba na yung scores haha
+Sorting scores matter to see the arrangement of lowest to highest
