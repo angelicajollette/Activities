@@ -1,1 +1,22 @@
+public class Main {
+    public static void main(String[] args) {
 
+        System.out.println("PRECEDENCE PUZZLE SOVERISM <3");
+
+        // Expression 1
+        // Prediction: 10
+        int answer1 = 20 / 5 + 2 * 3;
+        System.out.println("Expression 1: 20 / 5 + 2 * 3 = " + answer1);
+
+        // Expression 2
+        // Prediction: 18
+        int answer2 = (10 - 4) * 3;
+        System.out.println("Expression 2: (10 - 4) * 3 = " + answer2);
+
+        // Expression 3
+        // Prediction: true
+        boolean answer3 = 12 - 4 > 3 + 2;
+        System.out.println("Expression 3: 12 - 4 > 3 + 2 = " + answer3);
+
+    }
+}
