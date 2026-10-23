@@ -1,0 +1,96 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String saved_username = "tungSahur";
+        int saved_pin = 6767;
+
+        System.out.print("Enter your username: ");
+        String username = input.nextLine();
+        
+        System.out.print("4-Digit PIN: ");
+        int pin = input.nextInt();
+
+        if (username.equals(saved_username)) {
+            if (pin == saved_pin) {
+                System.out.println("Welcome tungSahur!");
+
+                System.out.print("Enter your account balance: ");
+                double balance = input.nextDouble();
+
+                String tier;
+
+                if (balance < 5000) {
+                    tier = "Bronze";
+                } else if (balance < 50000) {
+                    tier = "Silver";
+                } else if (balance < 100000) {
+                    tier = "Gold";
+                } else {
+                    tier = "Platinum";
+                }
+
+                System.out.println("Account Tier: " + tier);
+
+                System.out.print("Enter the withdrawal amount: ");
+                double amount = input.nextDouble();
+
+                double limit;
+
+                if (tier.equals("Bronze")) {
+                    limit = 25000;
+                } else if (tier.equals("Silver")) {
+                    limit = 75000;
+                } else if (tier.equals("Gold")) {
+                    limit = 150000;
+                } else {
+                    limit = 1000000;
+                }
+
+                double feeRate = 0;
+
+                switch (tier) {
+                    case "Bronze":
+                        feeRate = 0.03;
+                        break;
+                    case "Silver":
+                        feeRate = 0.04;
+                        break;
+                    case "Gold":
+                        feeRate = 0.05;
+                        break;
+                    case "Platinum":
+                        feeRate = 0.06;
+                        break;
+                }
+
+                double fee = amount * feeRate;
+                double total = amount + fee;
+
+                if (amount <= 0) {
+                    System.out.println("Opps! Your withdrawal amount is INVALID");
+                } else if (amount > limit) {
+                    System.out.println("Opps! Your withdrawal exceeds to your daily limit");
+                } else { 
+                    if (total <= balance) {
+                        System.out.println("APPROVED");
+                        System.out.println("Withdrawal Amount: " + amount);
+                        System.out.println("Transaction Fee: " + fee);
+                        System.out.println("Total Deduction: " + total);
+                        System.out.println("Remaining Balance: " + (balance - total));
+                    } else {
+                        System.out.println("Opps! Your Balance is insufficient");
+                    }
+                }
+
+            } else {
+                System.out.println("Opps! Your PIN is INCORRECT");
+            }
+        } else {
+            System.out.println("Opps! Your Username is INCORRECT.");
+        }
+
+    }
+}
