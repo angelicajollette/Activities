@@ -7,7 +7,7 @@ public class typesafeShoppingCalculator {
     String storeName = "Muffy";
 
     totalCost = quantity * unitPrice;
-
+    //Total cost should not be declared as an int because the unitprice is declared as double
     System.out.println("Store Name: " + storeName);
     System.out.println("Quantity: " + quantity);
     System.out.println("Unit price: " + unitPrice);
@@ -15,4 +15,4 @@ public class typesafeShoppingCalculator {
   }
 }
 
-Total cost should not be declared as an int because the unitprice is declared as double
+
