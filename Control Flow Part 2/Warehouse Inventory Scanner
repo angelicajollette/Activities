@@ -128,7 +128,5 @@ public class Main {
             }
 
         } while (choice != 5);
-
-        input.close();
     }
 }
