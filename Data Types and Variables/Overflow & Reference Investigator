@@ -1,16 +1,13 @@
 public class Main {
     public static void main(String[] args) {
 
-        // 1. Byte overflow
         byte number = 127;   
         
         System.out.println("Before increment: " + number);
-
         number++;
 
         System.out.println("After increment: " + number);
 
-        
         System.out.println("Comparing strings");
 
         String word1 = new String("Cute");
@@ -24,7 +21,7 @@ public class Main {
         System.out.println("word2 == word3: " + (word2 == word3));
         System.out.println("word2.equals(word3): " + word2.equals(word3));
 
-        //by comparing the string/word it shows ture and false, if it's different its false but if it's same true
+        //by comparing the string/word it will show true and false, if it's different its false but if it's same true
 
         int[] firstArray = {7, 8, 9};
         int[] secondArray = firstArray;
